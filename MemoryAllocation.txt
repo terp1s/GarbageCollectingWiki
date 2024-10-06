@@ -1,0 +1,26 @@
+--MEMORY ALLOCATION--
+
+Computers have a limited memory, which is in everyone's favor to use as little as possible. Excessive and wasteful use of memory could lead to decreased effectivity and general discomfort of the computer. Memory is managed at many different levels, some is done by operating system, some by a certain application.
+
+Memory is allocated in sufficient amount when coding. For example, when creating a list in Python, the size is 64 bytes, even when the programmer uses only for example 32 bytes. This overly generous way of memory used can be solved by using data types, that meets the requirements without any extra space. In this scenario, the programmer could use a 32 byte array. 
+
+
+MANUAL MEMORY MANAGMENT
+
+Memory is managed manually when using older or low-level programing languages, such as C. The strategy used for memory allocation is the command -malloc-, and then -free- to mark it as unused.
+
+This form of memory management is considered unsafe, as it is easy to violate memory safety and cause memory leaks (when unused memory stays allocated). Memory leaks lead to continual decrease of memory, which is not optimal for computer. 
+Other type of memory-related bugs are for example dangling pointers, which are pointers that point to unallocated memory. Another bug is called double free bug, which occurs when a program attempts to deallocate a par of memory twice, which could have been used by another part of the program in the meantime.
+
+Manual memory management is preferable in a situation where memory is scarce, as it can be reclaimed immediately.
+
+
+AUTOMATIC MEMORY MANAGEMENT
+
+When memory is managed automatically, the programmer doesn't have to take care of what is being referenced and what is not. It leads to more comfortable coding with less bugs. Some of the strategies are: 
+
+~ Garbage collection - this strategy checks in cycles which resources are unused or unreferenced. These are called garbage (see Garbage.txt). First garbage collector was implemented in Lisp in 1959. Most languages implement this strategy. It can take time for the cycle to execute, so it can slow down the performance. 
+
+~ Reference counting - this is a technique, that holds the number of pointers leading to each resource. Once the number drops to zero, the memory is freed. This technique is faster than garbage collection, as it frees memory as soon as it can and doesn't work in spaced-out cycles.
+
+
