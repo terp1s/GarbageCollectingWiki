@@ -6,10 +6,10 @@
   - The object type (blob, tree, commit, or tag).
   - The size of the object data.
 
-  This format allows Git to efficiently read and write objects. The structure looks like:
+    This format allows Git to efficiently read and write objects. The structure looks like:
 `<type> <size>\0<data>`
 
-For example, a blob object storing a file would appear as:
+    For example, a blob object storing a file would appear as:
 `blob 123\0<actual file data>`
 
 
@@ -23,7 +23,7 @@ For example, a blob object storing a file would appear as:
 - **Mark Phase**: Starting from known references (branches, tags, and HEAD), Git traverses the object graph, marking each reachable object.
 - **Sweep Phase**: After marking, Git identifies unmarked objects as garbage for deletion.
 
-This approach ensures that all live objects are retained while the unreachable ones are cleaned up.
+    This approach ensures that all live objects are retained while the unreachable ones are cleaned up.
 
 - **Concurrent Garbage Collection**: In some implementations, Git may allow concurrent processes to access objects during garbage collection, thus reducing lock contention. This is particularly useful in scenarios where multiple users are pushing changes simultaneously.
 
@@ -89,5 +89,4 @@ This approach ensures that all live objects are retained while the unreachable o
 
 ---
 
-These advanced details illustrate the complexity and efficiency of Git’s garbage collection mechanism. By utilizing sophisticated data structures, algorithms, and optimizations, Git ensures that repositories remain efficient and responsive, even as they grow in size and complexity. Understanding these intricacies can be beneficial for developers seeking to optimize their workflows or troubleshoot performance issues in large Git repositories.
 
