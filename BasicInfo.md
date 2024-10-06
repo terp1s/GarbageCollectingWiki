@@ -1,5 +1,5 @@
 # Garbage
-
+# What is computer garbage?
 
 
 ## What is Garbage in Git? ##
