@@ -1,14 +1,14 @@
 `git prune` deletes unnecessary objects. These are objects only accessible via unreachable commits. `prune` calls `git fsck --unreachable`, which lists such objects, and then `prune` prunes (deletes) them.
 #### Options:  
-  - `-n`  
+- `-n`  
    `--dry-run`
   - only show what would be removed without actually removing it
-  - `-v`  
+- `-v`  
    `--verbose`
   - print a list of all the removed objects
-  - `--progress`
+- `--progress`
   - show progress
-  - `--expire <time>`
+- `--expire <time>`
   - only delete objects older than `<time>`
 
 Additionaly, multiple commits can be passed as an argument, in which case reachability will be checked as if there were pointers to those commits. 
