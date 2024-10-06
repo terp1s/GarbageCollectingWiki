@@ -1,8 +1,4 @@
-# Garbage
-## What is computer garbage?
-
-
-## What is Garbage in Git? ##
+# What is Garbage in Git? 
 
 In Git, garbage refers to Git objects (like commits, blobs, or trees) that are no longer referenced by any branches, tags, or reflogs (references logs). These objects are still stored in the Git repository, but they are effectively unused or unreachable and could be safely removed.
 
