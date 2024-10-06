@@ -3,6 +3,8 @@
 ## 1. Object Storage and Encoding
 
 - **Object Format**: Each Git object has a specific format, consisting of a header followed by the object data. The header contains:
+
+
   - The object type (blob, tree, commit, or tag).
   - The size of the object data.
 
