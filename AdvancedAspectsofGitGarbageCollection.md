@@ -6,11 +6,9 @@
   - The object type (blob, tree, commit, or tag).
   - The size of the object data.
 
-    This format allows Git to efficiently read and write objects. The structure looks like:
-`<type> <size>\0<data>`
+_This format allows Git to efficiently read and write objects. The structure looks like:_ `<type> <size>\0<data>`
 
-    For example, a blob object storing a file would appear as:
-`blob 123\0<actual file data>`
+_For example, a blob object storing a file would appear as:_ `blob 123\0<actual file data>`
 
 
 - **Compression Algorithms**: Git uses zlib for compression, specifically DEFLATE, which is a combination of LZ77 and Huffman coding. This ensures that:
@@ -23,7 +21,7 @@
 - **Mark Phase**: Starting from known references (branches, tags, and HEAD), Git traverses the object graph, marking each reachable object.
 - **Sweep Phase**: After marking, Git identifies unmarked objects as garbage for deletion.
 
-    This approach ensures that all live objects are retained while the unreachable ones are cleaned up.
+    _This approach ensures that all live objects are retained while the unreachable ones are cleaned up._
 
 - **Concurrent Garbage Collection**: In some implementations, Git may allow concurrent processes to access objects during garbage collection, thus reducing lock contention. This is particularly useful in scenarios where multiple users are pushing changes simultaneously.
 
